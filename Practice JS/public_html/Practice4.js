@@ -1,15 +1,4 @@
-
-<html>
-    <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <div>TODO write content</div>
-    </body>
-    <script>
-        var accounts = [ ];
+ var accounts = [ ];
 
 function createAccount (account) {
 	accounts.push(account);
@@ -29,7 +18,7 @@ function getAccount (username) {
 }
 
 function getBalance (acc) {
-	account =  getAccount (acc)
+	account =  getAccount (acc);
         return function() {
         return accounts.balance;
     };
@@ -92,5 +81,3 @@ console.log(accounts);
 
 var exitingJensAccount = getAccount('jen001');
 console.log(exitingJensAccount);
-    </script>
-</html>
