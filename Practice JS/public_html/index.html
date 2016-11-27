@@ -29,7 +29,12 @@ function getAccount (username) {
 }
 
 function deposit (account, amount) {
-	account.balance += amount;
+        if (typeof(amount) === 'number' && amount > 0) {
+            return account.balance += amount;
+        } else {
+            console.log('Error: Wrong value');
+        };
+	
 }
 
 function withdraw (account, amount) {
