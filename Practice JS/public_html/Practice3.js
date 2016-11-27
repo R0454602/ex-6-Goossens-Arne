@@ -6,23 +6,32 @@ function createAccount (account) {
 }
 
 function getAccount (username) {
-	var matchedAccount;
+	var i;
+        var acc;
+        for (i=0; i<accounts.lenght; i++){
+            if (accounts[i].username === username) {
+            acc = accounts[i];
+            }
+        };
 
-	accounts.forEach( function (internal_account) {
-		if (internal_account.username === username) {
-			matchedAccount = internal_account;
-		}
-	} );
-
-	return matchedAccount;
+        return accounts[acc]
 }
 
 function deposit (account, amount) {
-	account.balance += amount;
+        if (typeof(amount) === 'number' && amount > 0) {
+            return account.balance += amount;
+        } else {
+            console.log('Error: Wrong value');
+        };
+	
 }
 
 function withdraw (account, amount) {
-	account.balance -= amount;
+	 if (typeof(amount) === 'number' && amount > 0) {
+            return account.balance -= amount;
+        } else {
+            console.log('Error: Wrong value');
+        };
 }
 
 function getBalance (account) {
